@@ -1,0 +1,15 @@
+/Users/manavpatel/Desktop/MIS221/mis-221-pa-5-mppatel6/bin/Debug/net7.0/mis-221-pa-5-mppatel6
+/Users/manavpatel/Desktop/MIS221/mis-221-pa-5-mppatel6/bin/Debug/net7.0/mis-221-pa-5-mppatel6.deps.json
+/Users/manavpatel/Desktop/MIS221/mis-221-pa-5-mppatel6/bin/Debug/net7.0/mis-221-pa-5-mppatel6.runtimeconfig.json
+/Users/manavpatel/Desktop/MIS221/mis-221-pa-5-mppatel6/bin/Debug/net7.0/mis-221-pa-5-mppatel6.dll
+/Users/manavpatel/Desktop/MIS221/mis-221-pa-5-mppatel6/bin/Debug/net7.0/mis-221-pa-5-mppatel6.pdb
+/Users/manavpatel/Desktop/MIS221/mis-221-pa-5-mppatel6/obj/Debug/net7.0/mis-221-pa-5-mppatel6.csproj.AssemblyReference.cache
+/Users/manavpatel/Desktop/MIS221/mis-221-pa-5-mppatel6/obj/Debug/net7.0/mis-221-pa-5-mppatel6.GeneratedMSBuildEditorConfig.editorconfig
+/Users/manavpatel/Desktop/MIS221/mis-221-pa-5-mppatel6/obj/Debug/net7.0/mis-221-pa-5-mppatel6.AssemblyInfoInputs.cache
+/Users/manavpatel/Desktop/MIS221/mis-221-pa-5-mppatel6/obj/Debug/net7.0/mis-221-pa-5-mppatel6.AssemblyInfo.cs
+/Users/manavpatel/Desktop/MIS221/mis-221-pa-5-mppatel6/obj/Debug/net7.0/mis-221-pa-5-mppatel6.csproj.CoreCompileInputs.cache
+/Users/manavpatel/Desktop/MIS221/mis-221-pa-5-mppatel6/obj/Debug/net7.0/mis-221-pa-5-mppatel6.dll
+/Users/manavpatel/Desktop/MIS221/mis-221-pa-5-mppatel6/obj/Debug/net7.0/refint/mis-221-pa-5-mppatel6.dll
+/Users/manavpatel/Desktop/MIS221/mis-221-pa-5-mppatel6/obj/Debug/net7.0/mis-221-pa-5-mppatel6.pdb
+/Users/manavpatel/Desktop/MIS221/mis-221-pa-5-mppatel6/obj/Debug/net7.0/mis-221-pa-5-mppatel6.genruntimeconfig.cache
+/Users/manavpatel/Desktop/MIS221/mis-221-pa-5-mppatel6/obj/Debug/net7.0/ref/mis-221-pa-5-mppatel6.dll

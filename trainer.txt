@@ -1,0 +1,9 @@
+1#Manav Patel#101 Hellen Keller BLVD#mppatel6@crimson.ua.edu#False
+2#Carson Miller#Jack Warner#cmiller@crimson.ua.edu#False
+3#Chase Callahan#15th Street#chase@crimson.ua.edu#False
+4#Zeb Rafay#13th Street#zrafay@crimson.ua.edu#False
+5#Ellie Dockery#Hackleberry Lane#edockery@crimson.ua.edu#False
+6#Jeff Lucas#100th Goat Street#jlucas@crimson.ua.edu#False
+7#Jacob Solanto#10th Street#jsolanto@crimson.ua.edu#False
+8#Mattie Bryant#TA Street#mbryant@crimson.ua.edu#False
+9#Alex Collins#6th TA Street#acollins@crimson.ua.edu#False
