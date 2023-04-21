@@ -22,39 +22,61 @@ namespace mis_221_pa_5_mppatel6
             string line = inFile.ReadLine();
             while(line != null){
                 string[] temp = line.Split('#');
-                bookings[Booking.GetCount()] = new Booking(int.Parse(temp[0]), temp[1], temp[2], temp[3], int.Parse(temp[4]) , temp[5], temp[6], bool.Parse(temp[7]));
+                bookings[Booking.GetCount()] = new Booking(int.Parse(temp[0]), temp[1], temp[2], DateOnly.Parse(temp[3]), int.Parse(temp[4]) , temp[5], temp[6], bool.Parse(temp[7]));
                 Booking.IncCount();
                 line = inFile.ReadLine();
             }
 
             inFile.Close();
         }
-        public void AddTransaction(){
+
+        public void Book(Listing[] listings, Trainer[] trainers, Booking[] bookings){
+            Console.Clear();
             Booking mybookings = new Booking();
+            ListingUtility utilityListing = new ListingUtility(listings);
+            utilityListing.GetAllListingsFromFile();
 
-            mybookings.SetSessionID();
-            System.Console.WriteLine("Please enter the customer's name:");
-            mybookings.SetCustomerName(Console.ReadLine());
-            System.Console.WriteLine("Please enter the customer's email:");
-            mybookings.SetCustomerEmail(Console.ReadLine());
-            System.Console.WriteLine("Please enter the training date:");
-            mybookings.SetTrainingDate(Console.ReadLine());
-            System.Console.WriteLine("Please enter the trainer ID:");
-            mybookings.SetTrainerID(int.Parse(Console.ReadLine()));
-            System.Console.WriteLine("Please enter the trainers name:");
-            mybookings.SetTrainerName(Console.ReadLine());
-            System.Console.WriteLine("Is the session Booked, Completed, or Cancelled:");
-            mybookings.SetStatus(Console.ReadLine());
-
-            bookings[Booking.GetCount()] = mybookings;
-            Booking.IncCount();
-
-            Save();
-        }
-
-        public static void Book(Listing[] listings, Trainer[] trainers){
             ListingReport report = new ListingReport(listings);
-            report.PrintAllListings();
+            report.PrintOpenListing();
+
+            TrainerUtility trainerUtility = new TrainerUtility(trainers);
+            trainerUtility.GetAllTrainersFromFile();
+
+            System.Console.WriteLine("");
+            System.Console.WriteLine("Which listing would you like to book?\nPlease choose the listing ID");
+            int searchVal = int.Parse(Console.ReadLine());
+            int foundIndex = utilityListing.Find(searchVal);
+
+            if(foundIndex != -1){
+                System.Console.WriteLine("What is the customers name?");
+                mybookings.SetCustomerName(Console.ReadLine());
+                System.Console.WriteLine("What is the customers email address?");
+                mybookings.SetCustomerEmail(Console.ReadLine());
+                mybookings.SetSessionID();
+                mybookings.SetTrainerName(listings[foundIndex].GetTrainerName());
+                mybookings.SetTrainingDate(listings[foundIndex].GetDate());
+                mybookings.SetStatus("Booked");
+                listings[foundIndex].SetTaken("Booked");
+
+                trainerUtility.Sort();
+                string name = listings[foundIndex].GetTrainerName();
+                int foundID = trainerUtility.BinaryFindTrainer(name);
+                mybookings.SetTrainerID(foundID);
+
+                bookings[Booking.GetCount()] = mybookings;
+                Booking.IncCount();
+
+                Save();
+                utilityListing.Save();
+                System.Console.WriteLine($"You have successfully booked your session!\nPlease Press any key to continue!");
+                Console.ReadKey();
+            }
+            else{
+                System.Console.WriteLine("Session not found\nPress a key to continue");
+                Console.ReadKey();
+            }
+
+            
         }
 
         public int Find(int searchVal){
@@ -90,7 +112,9 @@ namespace mis_221_pa_5_mppatel6
                 }
                 else if(temp == "3"){
                     System.Console.WriteLine("Please enter the training date: ");
-                    bookings[foundIndex].SetTrainingDate(Console.ReadLine());
+                    string date = Console.ReadLine();
+                    DateOnly parsedDate = DateOnly.Parse(date);
+                    bookings[foundIndex].SetTrainingDate(parsedDate);
                 }
                 else if(temp == "4"){
                     System.Console.WriteLine("Please enter the trainer's ID:");
@@ -127,20 +151,36 @@ namespace mis_221_pa_5_mppatel6
 
             }
         }
-        // public void IndividualReport(){
-        //     System.Console.WriteLine("What is the email of the customer you would like to see the reports about");
-        //     string searchVal = Console.ReadLine();
-        //     string foundIndex = FindEmail(searchVal);
-
-            
-        // }
-        // public string FindEmail(string searchVal){
-        //     for(int i = 0; i < Booking.GetCount(); i++){
-        //         if(bookings[i].GetCustomerEmail() == searchVal){
-        //             return bookings[i];
-        //         }
-        //     }
-        //     return "";
-        // }
+        public void Sort(){
+            for(int i = 0; i < Booking.GetCount() - 1; i++){
+                int min = i;
+                for(int j = i + 1; j < Booking.GetCount(); j++){
+                    if(bookings[min].GetCustomerName().CompareTo(bookings[j].GetCustomerName()) > 0 || (bookings[j].GetCustomerName() == bookings[min].GetCustomerName() && bookings[min].GetTrainingDate().CompareTo(bookings[j].GetTrainingDate()) > 0)){
+                        min = j;
+                    }
+                }
+                if(min != i){
+                    Swap(min, i);
+                }
+            }
+        }
+        public void SortDate(){
+            for(int i = 0; i < Booking.GetCount() - 1; i++){
+                int min = i;
+                for(int j = i + 1; j < Booking.GetCount(); j++){
+                    if(bookings[min].GetTrainingDate().CompareTo(bookings[j].GetTrainingDate()) > 0 || (bookings[j].GetTrainingDate() == bookings[min].GetTrainingDate())){
+                        min = j;
+                    }
+                }
+                if(min != i){
+                    Swap(min, i);
+                }
+            }
+        }
+        private void Swap(int x, int y){
+            Booking temp = bookings[x];
+            bookings[x] = bookings[y];
+            bookings[y] = temp;
+        }
     }
 }

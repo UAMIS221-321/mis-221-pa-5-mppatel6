@@ -9,8 +9,8 @@ namespace mis_221_pa_5_mppatel6
     {
         private int listingID;
         private string trainerName;
-        private string date;
-        private string time;
+        private DateOnly date;
+        private TimeOnly time;
         private int cost;
         private string taken;
         private bool deleted;
@@ -20,7 +20,7 @@ namespace mis_221_pa_5_mppatel6
         public Listing(){
 
         }
-        public Listing(int listingID, string trainerName, string date, string time, int cost, string taken, bool deleted){
+        public Listing(int listingID, string trainerName, DateOnly date, TimeOnly time, int cost, string taken, bool deleted){
             this.listingID = listingID;
             this.trainerName = trainerName;
             this.date = date;
@@ -43,16 +43,16 @@ namespace mis_221_pa_5_mppatel6
         public void SetTrainerName(string trainerName){
             this.trainerName = trainerName;
         }
-        public string GetDate(){
+        public DateOnly GetDate(){
             return date;
         }
-        public void SetDate(string date){
+        public void SetDate(DateOnly date){
             this.date = date;
         }
-        public string GetTime(){
+        public TimeOnly GetTime(){
             return time;
         }
-        public void SetTime(string time){
+        public void SetTime(TimeOnly time){
             this.time = time;
         }
         public int GetCost(){
@@ -87,7 +87,7 @@ namespace mis_221_pa_5_mppatel6
         public override string ToString()
         {
             if(deleted == false){
-                return String.Format($"{listingID, -0} {trainerName, -20} {date, -20} {time, -20} ${cost, -20} {taken, -20}");
+                return String.Format($"{listingID, -5} {trainerName, -20} {date, -20} {time, -20} {cost.ToString("C"), -20} {taken, -20}");
             }
             return "";
         }

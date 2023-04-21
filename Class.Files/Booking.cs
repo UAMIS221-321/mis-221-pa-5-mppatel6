@@ -10,7 +10,7 @@ namespace mis_221_pa_5_mppatel6
         private int sessionID;
         private string customerName;
         private string customerEmail;
-        private string trainingDate;
+        private DateOnly trainingDate;
         private string status;
         private int trainerID;
         private string trainerName;
@@ -22,7 +22,7 @@ namespace mis_221_pa_5_mppatel6
 
         }
 
-        public Booking(int sessionID, string customerName, string customerEmail, string trainingDate, int trainerID, string trainerName, string status, bool deleted){
+        public Booking(int sessionID, string customerName, string customerEmail, DateOnly trainingDate, int trainerID, string trainerName, string status, bool deleted){
             this.sessionID = sessionID;
             this.customerName = customerName;
             this.customerEmail = customerEmail;
@@ -57,10 +57,10 @@ namespace mis_221_pa_5_mppatel6
             this.customerEmail = customerEmail;
         }
 
-        public string GetTrainingDate(){
+        public DateOnly GetTrainingDate(){
             return trainingDate;
         }
-        public void SetTrainingDate(string trainingDate){
+        public void SetTrainingDate(DateOnly trainingDate){
             this.trainingDate = trainingDate;
         }
         public string GetStatus(){
@@ -100,7 +100,7 @@ namespace mis_221_pa_5_mppatel6
 
         public override string ToString()
         {
-            return String.Format($"{sessionID, -0} {customerName, -25} {customerEmail, -25} {trainingDate, -25} {trainerID, -25} {trainerName, -25} {status, -25}");
+            return String.Format($"{sessionID, -5} {customerName, -25} {customerEmail, -25} {trainingDate, -25} {trainerID, -25} {trainerName, -25} {status, -25}");
         }
 
         public string ToFile()

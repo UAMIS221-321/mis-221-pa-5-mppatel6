@@ -1,10 +1,13 @@
 ﻿using mis_221_pa_5_mppatel6;
 
 // start //
+Trainer[] trainers = new Trainer[1000];
+Listing[] listings = new Listing[1000];
+Booking[] bookings = new Booking[1000];
 
 int userChoice = GetUserChoice(); // priming read
-while (userChoice != 5){ // condition check // pretest loop(testing before)
-    RouteChoice(userChoice);
+while (userChoice != 6){ // condition check // pretest loop(testing before)
+    RouteChoice(userChoice, trainers, listings, bookings);
     userChoice = GetUserChoice(); // update read
 }
 // end main 
@@ -21,30 +24,33 @@ static int GetUserChoice(){
 
 static void DisplayMenu(){ // display the menu choice
     Console.Clear();
-    System.Console.WriteLine("1:  Manage Trainer Data\n2:  Manage Listing Data\n3:  Book Session\n4:  Run Reports\n5:  Exit");
+    System.Console.WriteLine("1:  Manage Trainer Data\n2:  Manage Listing Data\n3:  Book Session\n4:  Run Reports\n5:  Build Workout\n6:  Exit");
 }
 
 static bool IsValidChoice(string userInput){ // checks to see if the user choice was valid to run
-    if (userInput == "1" || userInput == "2" || userInput == "3" || userInput == "4" || userInput == "5"){
+    if (userInput == "1" || userInput == "2" || userInput == "3" || userInput == "4" || userInput == "5" || userInput == "6"){
         return true;
     }
     return false;
 }
 
-static void RouteChoice(int userChoice){ // routes the users choice to what they wanna do
+static void RouteChoice(int userChoice, Trainer[] trainers, Listing[] listings, Booking[] bookings){ // routes the users choice to what they wanna do
     if(userChoice == 1){
-        ManageTrainer();
+        ManageTrainer(trainers);
     }
     else if(userChoice == 2){
-        ManageListing();
+        ManageListing(listings);
     }
     else if(userChoice == 3){
-        ManageCustomer();
+        ManageCustomer(trainers, listings, bookings);
     }
     else if(userChoice == 4){
-        RunReports();
+        RunReports(trainers, listings, bookings);
     }
-    else if(userChoice != 5){
+    else if(userChoice == 5){
+        BuildWorkout();
+    }
+    else if(userChoice != 6){
         SayInvalid();
     }
 }
@@ -59,10 +65,8 @@ static void PauseAction(){ // pauses the console for the user to be able to see 
     Console.ReadKey();
 }
 
-static void ManageTrainer(){
+static void ManageTrainer(Trainer[] trainers){
     Console.Clear();
-    Trainer[] trainers = new Trainer[50];
-
 
     TrainerUtility utility = new TrainerUtility(trainers);
     utility.GetAllTrainersFromFile();
@@ -96,9 +100,8 @@ static void ManageTrainer(){
     }
 }
 
-static void ManageListing(){
+static void ManageListing(Listing[] listings){
     Console.Clear();
-    Listing[] listings = new Listing[50];
 
     ListingUtility utility = new ListingUtility(listings);
     utility.GetAllListingsFromFile();
@@ -134,63 +137,127 @@ static void ManageListing(){
     
 }
 
-static void ManageCustomer(){
+static void ManageCustomer(Trainer[] trainers, Listing[] listings, Booking[] bookings){
     Console.Clear();
-    Booking[] bookings = new Booking[50];
 
     BookingUtility utility = new BookingUtility(bookings);
     utility.GetAllTransactionsFromFile();
 
-    utility.Book();
+    System.Console.WriteLine("1:  Manage Customer Reports\n2:  Book Session\n3:  Exit");
+    string userInput = Console.ReadLine();
 
-    // BookingReport report = new BookingReport(bookings);
-    // report.PrintAllBookings();
+    while(userInput != "3"){
 
-    // System.Console.WriteLine("");
-    // System.Console.WriteLine("1:  Add Transaction\n2:  Edit Transaction\n3:  Delete Transaction\n4:  Exit");
-    // string userInput = Console.ReadLine();
+        if(userInput == "1"){
+            Console.Clear();
+            BookingReport report = new BookingReport(bookings);
+            report.PrintAllBookings();
+            System.Console.WriteLine("");
+            System.Console.WriteLine("1:  Edit Transaction\n2:  Delete Transaction\n3:  Exit");
+            string answer = Console.ReadLine();
+            while(answer != "3"){
+                if(answer == "1"){
+                    utility.UpdateTransaction();
+                }
+                else if(answer == "2"){
+                    utility.DeleteTransaction();
+                }
+                else if(answer != "3"){
+                    SayInvalid();
+                }
+                Console.Clear();
+                report.PrintAllBookings();
+                System.Console.WriteLine("");
+                System.Console.WriteLine("1:  Edit Transaction\n2:  Delete Transaction\n3:  Exit");
+                answer = Console.ReadLine();
+            }
+        }
+        else if(userInput == "2"){
+            utility.Book(listings, trainers, bookings);
+        }
+        else if(userInput != "3"){
+            SayInvalid();
+        }
 
-    // while(userInput != "4"){
-
-    //     if(userInput == "1"){
-    //         utility.AddTransaction();
-    //     }
-    //     else if(userInput == "2"){
-    //         utility.UpdateTransaction();
-    //     }
-    //     else if(userInput == "3"){
-    //         utility.DeleteTransaction();
-    //     }
-    //     else if(userInput != "4"){
-    //         SayInvalid();
-    //     }
-
-    //     Console.Clear();
-    //     report.PrintAllBookings();
-    //     System.Console.WriteLine("");
-    //     System.Console.WriteLine("1:  Add Transaction\n2:  Edit Transaction\n3:  Delete Transaction\n4:  Exit");
-    //     userInput = Console.ReadLine();
-    // }
+        Console.Clear();
+        System.Console.WriteLine("1:  Manage Customer Reports\n2:  Book Session\n3:  Exit");
+        userInput = Console.ReadLine();
+    }
 }
 
-static void RunReports(){
+static void RunReports(Trainer[] trainers, Listing[] listings, Booking[] bookings){
     Console.Clear();
-    System.Console.WriteLine("What kind of record would you like to see?\n1:  Individual Customer Sessions\n2:  Historical Customer Sessions\n3:  Historical Revenue Report");
+    System.Console.WriteLine("What kind of record would you like to see?\n1:  Individual Customer Sessions\n2:  Historical Customer Sessions\n3:  Historical Revenue Report\n4:  Exit");
     string answer = Console.ReadLine();
 
+    BookingReport report = new BookingReport(bookings);
+
+    BookingUtility utility = new BookingUtility(bookings);
+    utility.GetAllTransactionsFromFile();
+    
+    while(answer != "4"){
+        if(answer == "1"){
+            Console.Clear();
+            report.IndividualReport();
+
+        }
+        else if(answer == "2"){
+            Console.Clear();
+            report.PrintCustomerSessions();
+            System.Console.WriteLine("");
+            System.Console.WriteLine("Here is the report for all the customers sorted by name and then date.\nPlease press a key to continue.");
+            Console.ReadKey();
+        }
+        else if(answer == "3"){
+            Console.Clear();
+            System.Console.WriteLine("1:  Combined Report\n2:  Monthly Report\n3:  Yearly Report\n4:  Exit");
+            string annual = Console.ReadLine();
+
+            while(annual != "4"){
+                if(annual == "1"){
+                    report.CombinedReport(listings);
+                }
+                else if(annual == "2"){
+                    report.MonthlyReport(listings);
+                }
+                else if(annual == "3"){
+                    report.YearlyReport(listings);
+                }
+                else if(annual != "4"){
+                    SayInvalid();
+                }
+                
+                Console.Clear();
+                System.Console.WriteLine("1:  Combined Report\n2:  Monthly Report\n3:  Yearly Report\n4:  Exit");
+                annual = Console.ReadLine();
+            }
+        }
+        else if (answer != "4"){
+            SayInvalid();
+        }
+        Console.Clear();
+        System.Console.WriteLine("1:  Individual Customer Sessions\n2:  Historical Customer Sessions\n3:  Historical Revenue Report\n4:  Exit");
+        answer = Console.ReadLine();
+    }
 }
 
 static void BuildWorkout(){
-    System.Console.WriteLine("What kind of workout would you like to do?\n1:  Intensisty Based Workout\n2:  Weightlifting Based Workout");
+    Console.Clear();
+    System.Console.WriteLine("What kind of workout would you like to do?\n1:  Intensity Based Workout\n2:  Weightlifting Based Workout\n3:  Exit");
     string answer = Console.ReadLine();
 
-    if(answer == "1"){
+    while(answer != "3"){
+        if(answer == "1"){
 
-    }
-    else if(answer == "2"){
+        }
+        else if(answer == "2"){
 
-    }
-    else{
-        SayInvalid();
+        }
+        else{
+            SayInvalid();
+        }
+
+        System.Console.WriteLine("What kind of workout would you like to do?\n1:  Intensity Based Workout\n2:  Weightlifting Based Workout\n3:  Exit");
+        answer = Console.ReadLine();
     }
 }

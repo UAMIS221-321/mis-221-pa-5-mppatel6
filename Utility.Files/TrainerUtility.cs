@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using mis_221_pa_5_mppatel6;
 
 namespace mis_221_pa_5_mppatel6
 {
@@ -50,6 +51,42 @@ namespace mis_221_pa_5_mppatel6
 
             return -1;
         }
+        public int BinaryFindTrainer(string searchVal){
+
+            int min = 0;
+            int max = Trainer.GetCount();
+            while(min <= max){
+                int middle = (max + min) / 2;
+                if(searchVal == trainers[middle].GetTrainerName()){
+                    return(trainers[middle].GetID());
+                }
+                else if(searchVal.CompareTo(trainers[middle].GetTrainerName()) == -1){
+                    max = middle - 1;
+                }
+                else{
+                    min = middle + 1; 
+                }
+            }
+            return -1;
+        }
+        public void Sort(){
+            for(int i = 0; i < Trainer.GetCount() - 1; i++){
+                int min = i;
+                for(int j = i + 1; j < Trainer.GetCount(); j++){
+                    if(trainers[j].GetTrainerName().CompareTo(trainers[min].GetTrainerName()) < 0 || trainers[j].GetTrainerName() == trainers[min].GetTrainerName()){
+                        min = j;
+                    }
+                }
+                if(min != i){
+                    Swap(min, i);
+                }
+            }
+        }
+        private void Swap(int x, int y){
+            Trainer temp = trainers[x];
+            trainers[x] = trainers[y];
+            trainers[y] = temp;
+        }
         public void Save(){
             StreamWriter outFile = new StreamWriter("trainer.txt");
             for(int i = 0; i < Trainer.GetCount(); i++){
@@ -69,6 +106,7 @@ namespace mis_221_pa_5_mppatel6
                 if(temp == "1"){
                     System.Console.WriteLine("Please enter the trainers name: ");
                     trainers[foundIndex].SetTrainerName(Console.ReadLine());
+                    
                 }
                 else if(temp == "2"){
                     System.Console.WriteLine("Please enter the trainers mailing address: ");

@@ -72,7 +72,7 @@ namespace mis_221_pa_5_mppatel6
         public override string ToString()
         {
             if(deleted == false){
-                return String.Format($"{trainerID, -0}  {trainerName, -20}  {mailingAddress, -40}  {emailAddress, -40}");
+                return String.Format($"{trainerID, -10}  {trainerName, -40}  {mailingAddress, -40}  {emailAddress, -40}");
             }
             return "";
         }

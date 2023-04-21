@@ -20,7 +20,7 @@ namespace mis_221_pa_5_mppatel6
             string line = inFile.ReadLine();
             while(line != null){
                 string[] temp = line.Split('#');
-                listings[Listing.GetCount()] = new Listing(int.Parse(temp[0]), temp[1], temp[2], temp[3],int.Parse(temp[4]), temp[5], bool.Parse(temp[6]));
+                listings[Listing.GetCount()] = new Listing(int.Parse(temp[0]), temp[1], DateOnly.Parse(temp[2]), TimeOnly.Parse(temp[3]),int.Parse(temp[4]), temp[5], bool.Parse(temp[6]));
                 Listing.IncCount();
                 line = inFile.ReadLine();
             }
@@ -29,13 +29,26 @@ namespace mis_221_pa_5_mppatel6
         }
         public void AddListing(){
             Listing mylistings = new Listing();
+            
             mylistings.SetListingID();
             System.Console.WriteLine("Please enter the trainers name:");
             mylistings.SetTrainerName(Console.ReadLine());
+
+    
             System.Console.WriteLine("Please enter the date of session:");
-            mylistings.SetDate(Console.ReadLine());
-            System.Console.WriteLine("Please enter the time of session:");
-            mylistings.SetTime(Console.ReadLine());
+            string date = Console.ReadLine();
+         
+           
+            System.Console.WriteLine("Please enter the time of session (Please enter in military time (+12 if after 12:00)) (HH:MM):");
+            string time = Console.ReadLine();
+            
+
+            DateOnly parsedDate = DateOnly.Parse(date);
+            TimeOnly parsedTime = TimeOnly.Parse(time);
+
+            mylistings.SetDate(parsedDate);
+            mylistings.SetTime(parsedTime);
+
             System.Console.WriteLine("Please enter the cost of session:");
             mylistings.SetCost(int.Parse(Console.ReadLine()));
             System.Console.WriteLine("Is the session open or taken?");
@@ -54,6 +67,7 @@ namespace mis_221_pa_5_mppatel6
             }
             return -1;
         }
+    
         public void Save(){
             StreamWriter outFile = new StreamWriter("listings.txt");
             for(int i = 0; i < Listing.GetCount(); i++){
@@ -75,11 +89,15 @@ namespace mis_221_pa_5_mppatel6
                 }
                 else if (temp == "2"){
                     System.Console.WriteLine("Please enter the date of session:");
-                    listings[foundIndex].SetDate(Console.ReadLine());
+                    string date = Console.ReadLine();
+                    DateOnly parsedDate = DateOnly.Parse(date);
+                    listings[foundIndex].SetDate(parsedDate);
                 }
                 else if(temp == "3"){
-                    System.Console.WriteLine("Please enter the time of session:");
-                    listings[foundIndex].SetTime(Console.ReadLine());
+                    System.Console.WriteLine("Please enter the time of session (Please enter in military time (+12 if after 12:00)):");
+                    string time = Console.ReadLine();
+                    TimeOnly parsedTime = TimeOnly.Parse(time);
+                    listings[foundIndex].SetTime(parsedTime);
                 }
                 else if(temp == "4"){
                     System.Console.WriteLine("Please enter the cost of session:");
@@ -113,5 +131,49 @@ namespace mis_221_pa_5_mppatel6
 
             }
         }
+
+        public int BinaryFindMonth(int searchVal){
+
+            int min = 0;
+            int max = Listing.GetCount();
+    
+            while(min <= max){
+                int middle = (max + min) / 2;
+                DateOnly find = listings[middle].GetDate();
+
+                if(searchVal == find.Month){
+                    return(listings[middle].GetCost());
+                }
+                else if(searchVal.CompareTo(find.Month) == -1){
+                    max = middle - 1;
+                }
+                else{
+                    min = middle + 1; 
+                }
+            }
+            return -1;
+        }
+        public int BinaryFindYear(int searchVal){
+
+            int min = 0;
+            int max = Listing.GetCount();
+    
+            while(min <= max){
+                int middle = (max + min) / 2;
+                DateOnly find = listings[middle].GetDate();
+
+                if(searchVal == find.Year){
+                    return(listings[middle].GetCost());
+                }
+                else if(searchVal.CompareTo(find.Year) == -1){
+                    max = middle - 1;
+                }
+                else{
+                    min = middle + 1; 
+                }
+            }
+            return -1;
+        }
+        
     }
 }

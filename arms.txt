@@ -1,0 +1,15 @@
+Hammer Curl##Bicep
+Close-grip Curl##Bicep
+Diamond Push Up##Tricep
+Behind-the-Back Cable Curl##Bicep
+EZ-Bar Preacher Curl##Bicep
+Reverse Curl##Bicep
+Tricep Pushdown##Tricep
+Close-grip Bench Press##Tricep
+Incline Bicep Curl##Bicep
+Concentration Curl##Bicep
+Twisting Dumbbell Curl##Bicep
+Spider Curl##Bicep
+One Arm Tricep Extensions##Tricep
+Close-grip EZ Skullcrusher##Tricep
+Tricep Dips##Triceps
