@@ -38,41 +38,48 @@ namespace mis_221_pa_5_mppatel6
 
             ListingReport report = new ListingReport(listings);
             report.PrintOpenListing();
+            int count = report.CountOpenListings();
 
             TrainerUtility trainerUtility = new TrainerUtility(trainers);
             trainerUtility.GetAllTrainersFromFile();
 
-            System.Console.WriteLine("");
-            System.Console.WriteLine("Which listing would you like to book?\nPlease choose the listing ID");
-            int searchVal = int.Parse(Console.ReadLine());
-            int foundIndex = utilityListing.Find(searchVal);
+            if(count > 0){
+                System.Console.WriteLine("");
+                System.Console.WriteLine("Which listing would you like to book?\nPlease choose the listing ID");
+                int searchVal = int.Parse(Console.ReadLine());
+                int foundIndex = utilityListing.Find(searchVal);
 
-            if(foundIndex != -1){
-                System.Console.WriteLine("What is the customers name?");
-                mybookings.SetCustomerName(Console.ReadLine());
-                System.Console.WriteLine("What is the customers email address?");
-                mybookings.SetCustomerEmail(Console.ReadLine());
-                mybookings.SetSessionID();
-                mybookings.SetTrainerName(listings[foundIndex].GetTrainerName());
-                mybookings.SetTrainingDate(listings[foundIndex].GetDate());
-                mybookings.SetStatus("Booked");
-                listings[foundIndex].SetTaken("Booked");
+                if(foundIndex != -1){
+                    System.Console.WriteLine("What is the customers name?");
+                    mybookings.SetCustomerName(Console.ReadLine());
+                    System.Console.WriteLine("What is the customers email address?");
+                    mybookings.SetCustomerEmail(Console.ReadLine());
+                    mybookings.SetSessionID();
+                    mybookings.SetTrainerName(listings[foundIndex].GetTrainerName());
+                    mybookings.SetTrainingDate(listings[foundIndex].GetDate());
+                    mybookings.SetStatus("Booked");
+                    listings[foundIndex].SetTaken("Booked");
 
-                trainerUtility.Sort();
-                string name = listings[foundIndex].GetTrainerName();
-                int foundID = trainerUtility.BinaryFindTrainer(name);
-                mybookings.SetTrainerID(foundID);
+                    trainerUtility.Sort();
+                    string name = listings[foundIndex].GetTrainerName();
+                    int foundID = trainerUtility.BinaryFindTrainer(name);
+                    mybookings.SetTrainerID(foundID);
 
-                bookings[Booking.GetCount()] = mybookings;
-                Booking.IncCount();
+                    bookings[Booking.GetCount()] = mybookings;
+                    Booking.IncCount();
 
-                Save();
-                utilityListing.Save();
-                System.Console.WriteLine($"You have successfully booked your session!\nPlease Press any key to continue!");
-                Console.ReadKey();
+                    Save();
+                    utilityListing.Save();
+                    System.Console.WriteLine($"You have successfully booked your session!\nPlease Press any key to continue!");
+                    Console.ReadKey();
+                }
+                else{
+                    System.Console.WriteLine("Session not found\nPress a key to continue");
+                    Console.ReadKey();
+                }
             }
             else{
-                System.Console.WriteLine("Session not found\nPress a key to continue");
+                System.Console.WriteLine("Sorry there are no sessions left to book\nPlease press a key to continue.");
                 Console.ReadKey();
             }
 

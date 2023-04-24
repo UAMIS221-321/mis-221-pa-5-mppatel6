@@ -242,21 +242,145 @@ static void RunReports(Trainer[] trainers, Listing[] listings, Booking[] booking
 }
 
 static void BuildWorkout(){
+    Workout[] workouts = new Workout[1000];
     Console.Clear();
+    WorkoutUtility print = new WorkoutUtility(workouts);
+
     System.Console.WriteLine("What kind of workout would you like to do?\n1:  Intensity Based Workout\n2:  Weightlifting Based Workout\n3:  Exit");
     string answer = Console.ReadLine();
 
     while(answer != "3"){
-        if(answer == "1"){
+        if(answer == "1"){    
+            Console.Clear();
+            System.Console.WriteLine("Which muscle group would you like to hit?\n1:  Chest\n2:  Back\n3:  Legs\n4:  Shoulders\n5:  Arms");
+            string userChoice = Console.ReadLine();
+            Console.Clear();
 
+            if(userChoice == "1"){
+                print.ChestCompoundIntensityBuilding();
+                print.ChestAccessoryIntensityBuilding();
+                print.ChestAccessoryIntensityBuilding();
+                print.ResetChest();
+
+                print.ShoulderAccessoryIntensityBuilding();
+                print.ResetShoulders();
+
+                print.TricepIntensityBuilding();
+                print.ResetArms();
+
+            }
+            else if(userChoice == "2"){
+                print.BackCompoundIntensityBuilding();
+                print.BackCompoundIntensityBuilding();
+                print.BackAccessoryIntensityBuilding();
+                print.BackAccessoryIntensityBuilding();
+                print.BackAccessoryIntensityBuilding();
+                print.ResetBack();
+
+                print.BicepIntensityBuilding();
+                print.ResetArms();
+
+            }
+            else if(userChoice == "3"){
+                print.QuadCompoundIntensityBuilding();
+                print.QuadAccessoryIntensityBuilding();
+                print.QuadAccessoryIntensityBuilding();
+                print.HamstringCompoundIntensityBuilding();
+                print.HamstringAccessoryIntensityBuilding();
+                print.HamstringAccessoryIntensityBuilding();
+
+                print.ResetLegs();
+
+            }
+            else if(userChoice == "4"){
+                print.ShoulderCompoundIntensityBuilding();
+                print.ShoulderCompoundIntensityBuilding();
+                print.ShoulderAccessoryIntensityBuilding();
+                print.ShoulderAccessoryIntensityBuilding();
+                print.ShoulderAccessoryIntensityBuilding();
+                
+                print.ResetShoulders();
+            }
+            else if(userChoice == "5"){
+                print.BicepIntensityBuilding();
+                print.BicepIntensityBuilding();
+                print.BicepIntensityBuilding();
+                print.TricepIntensityBuilding();
+                print.TricepIntensityBuilding();
+                print.TricepIntensityBuilding();
+                
+                print.ResetArms();
+            }
+            Console.ReadKey();
         }
         else if(answer == "2"){
+            Console.Clear();
+            System.Console.WriteLine("Which muscle group would you like to hit?\n1:  Chest\n2:  Back\n3:  Legs\n4:  Arms\n5:  Shoulders");
+            string userChoice = Console.ReadLine();
+            if(userChoice == "1"){
+                print.ChestCompoundBodyBuilding();
+                print.ChestCompoundBodyBuilding();
+                print.ChestAccessoryBodyBuilding();
+                print.ChestAccessoryBodyBuilding();
+                print.ResetChest();
 
+                print.ShoulderAccessoryIntensityBuilding();
+                print.ResetShoulders();
+
+                print.TricepBodyBuilding();
+                print.ResetArms();
+
+            }
+            else if(userChoice == "2"){
+                print.BackCompoundBodyBuilding();
+                print.BackCompoundBodyBuilding();
+                print.BackAccessoryBodyBuilding();
+                print.BackAccessoryBodyBuilding();
+                print.ResetBack();
+
+                print.BicepBodyBuilding();
+                print.ResetArms();
+
+            }
+            else if(userChoice == "3"){
+                print.QuadCompoundBodyBuilding();
+                print.QuadAccessoryBodyBuilding();
+                print.QuadAccessoryBodyBuilding();
+                print.HamstringCompoundBodyBuilding();
+                print.HamstringAccessoryBodyBuilding();
+                print.HamstringAccessoryBodyBuilding();
+                
+                print.ResetLegs();
+            }
+            else if(userChoice == "4"){
+                print.ShoulderCompoundBodyBuilding();
+                print.ShoulderCompoundBodyBuilding();
+                print.ShoulderAccessoryBodyBuilding();
+                print.ShoulderAccessoryBodyBuilding();
+                print.ShoulderAccessoryBodyBuilding();
+
+                print.ResetShoulders();
+
+            }
+            else if(userChoice == "5"){
+                print.BicepBodyBuilding();
+                print.BicepBodyBuilding();
+                print.BicepBodyBuilding();
+                print.TricepBodyBuilding();
+                print.TricepBodyBuilding();
+                print.TricepBodyBuilding();
+
+                print.ResetArms();
+                
+            }
+            Console.ReadKey();
         }
         else{
             SayInvalid();
+
         }
 
+        Console.Clear();
         System.Console.WriteLine("What kind of workout would you like to do?\n1:  Intensity Based Workout\n2:  Weightlifting Based Workout\n3:  Exit");
         answer = Console.ReadLine();
     }

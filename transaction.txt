@@ -9,3 +9,4 @@
 9#Chase Callahan#chase@crimson.ua.edu#5/1/2023#2#Carson Miller#Booked#False
 10#Bryce Young#byoung@crimson.ua.edu#4/28/2023#1#Manav Patel#Booked#False
 11#Kevin Durant#kdurant@suns.com#4/1/2024#1#Manav Patel#Booked#False
+12#Bryce Young#byoung@crimson.ua.edu#4/25/2023#2#Carson Miller#Booked#False

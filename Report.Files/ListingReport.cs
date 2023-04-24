@@ -31,5 +31,18 @@ namespace mis_221_pa_5_mppatel6
                 }
             }
         }
+        public int CountOpenListings(){
+            int count = 0;
+            for(int i = 0; i < Listing.GetCount(); i++){
+                if(listings[i].GetDeleted() == false){
+                    if(listings[i].GetTaken() == "Open"){
+                        System.Console.WriteLine(listings[i].ToString());
+                        count++;
+                    }
+                }
+            }
+
+            return count;
+        }
     }
 }

@@ -1,15 +1,15 @@
-Hammer Curl##Bicep
-Close-grip Curl##Bicep
-Diamond Push Up##Tricep
-Behind-the-Back Cable Curl##Bicep
-EZ-Bar Preacher Curl##Bicep
-Reverse Curl##Bicep
-Tricep Pushdown##Tricep
-Close-grip Bench Press##Tricep
-Incline Bicep Curl##Bicep
-Concentration Curl##Bicep
-Twisting Dumbbell Curl##Bicep
-Spider Curl##Bicep
-One Arm Tricep Extensions##Tricep
-Close-grip EZ Skullcrusher##Tricep
-Tricep Dips##Triceps
+Hammer Curl#6-8#1-1:30#https://www.youtube.com/watch?v=TwD-YGVP4Bk#Bicep#Open
+Close-grip Curl#6-8#1 minute#https://www.youtube.com/watch?v=vSupPQiBkeY#Bicep#Open
+Diamond Push Up#6-8#1-1:30#https://www.youtube.com/watch?v=pD3mD6WgykM#Tricep#Open
+Behind-the-Back Cable Curl#6-8#1-1:30#https://www.youtube.com/watch?v=Df0GjCkUh90#Bicep#Open
+EZ-Bar Preacher Curl#6-8#1-1:30#https://www.youtube.com/watch?v=fIWP-FRFNU0#Bicep#Open
+Reverse Curl#8-12#1 minute#https://www.youtube.com/watch?v=nRgxYX2Ve9w#Bicep#Open
+Tricep Pushdown#6-8#1-1:30#https://www.youtube.com/watch?v=-zLyUAo1gMw#Tricep#Open
+Close-grip Bench Press#6-8#1-1:30#https://www.youtube.com/watch?v=wxVRe9pmJdk#Tricep#Open
+Incline Bicep Curl#6-8#1-1:30#https://www.youtube.com/watch?v=HhHHBj3qTJ4#Bicep#Open
+Concentration Curl#6-8#1-1:30#https://www.youtube.com/watch?v=0AUGkch3tzc#Bicep#Open
+Twisting Dumbbell Curl#8-12#1 minute#https://www.youtube.com/watch?v=wL85MrmoCLc#Bicep#Open
+Spider Curl#6-8#1 minute#https://www.youtube.com/watch?v=nvufDW-MSQk#Bicep#Open
+One Arm Tricep Extensions#6-8#1-1:30#https://www.youtube.com/watch?v=_gsUck-7M74#Tricep#Open
+Close-grip EZ Bar Skullcrusher#6-8#1-1:30#https://www.youtube.com/watch?v=d_KZxkY_0cM#Tricep#Open
+Tricep Dips#8-12#1 minute#https://www.youtube.com/watch?v=BjiyWC_cJW0#Triceps#Open

@@ -1,13 +1,12 @@
-Bench Press#https://www.youtube.com/watch?v=gRVjAtPip0Y#Compound
-Incline Bench Press#https://www.youtube.com/watch?v=jPLdzuHckI8#Compound
-Dumbbell Bench Press#https://www.youtube.com/watch?v=VmB1G1K7v94#Compound
-Dumbbell Incline Bench Press#https://www.youtube.com/watch?v=8iPEnn-ltC8#Compound
-Chest Dip#https://www.youtube.com/watch?v=dX_nSOOJIsE#Compound
-Chest Press#https://www.youtube.com/watch?v=xUm0BiZCWlQ#Compound
-Push-ups#https://www.youtube.com/watch?v=IODxDxX7oi4#Compound
-Cable Fly Crossover#https://www.youtube.com/watch?v=taI4XduLpTk#Accessory
-Low Cable Fly Crossover#https://www.youtube.com/watch?v=M1N804yWA-8#Accessory
-Dumbbell Chest Fly#https://www.youtube.com/watch?v=QENKPHhQVi4#Accessory
-Dumbbell Incline Chest Fly#https://www.youtube.com/watch?v=ajdFwa-qM98#Accessory
-Pec Deck Butterfly#https://www.youtube.com/watch?v=H4mVGHaK2f4#Accessory
-Chest Fly#https://www.youtube.com/watch?v=WEM9FCIPlxQ#Accessory
+Bench Press#8-10#1-1:30#https://www.youtube.com/watch?v=gRVjAtPip0Y&t=61s#Compound#Open
+Incline Bench Press#4-6#1-1:30#https://www.youtube.com/watch?v=jPLdzuHckI8#Compound#Open
+Dumbbell Bench Press#8-10#1-1:30#https://www.youtube.com/watch?v=VmB1G1K7v94&t=32s#Compound#Open
+Dumbbell Incline Bench Press#4-6#1-1:30#https://www.youtube.com/watch?v=8iPEnn-ltC8&t=13s#Compound#Open
+Machine Chest Press#8-10#1-1:30#https://www.youtube.com/watch?v=xUm0BiZCWlQ&t=18s#Compound#Open
+Chest Dip#8-10#1-1:30#https://www.youtube.com/watch?v=dX_nSOOJIsE&t=10s#Compound#Open
+Cable Fly Crossover#12-15#1-1:30#https://www.youtube.com/watch?v=taI4XduLpTk&t=11s#Accessory#Open
+Low Cable Fly Crossover#8-12#1-1:30#https://www.youtube.com/watch?v=M1N804yWA-8&t=15s#Accessory#Open
+Dumbbell Chest Fly#12-15#1-1:30#https://www.youtube.com/watch?v=q4BBy5cNjUQ#Accessory#Open
+Incline Chest Fly#12-15#1-1:30#https://www.youtube.com/watch?v=bDaIL_zKbGs#Accessory#Open
+Butterfly Pec Deck#12-15#1-1:30#https://www.youtube.com/watch?v=Qr7dstCeYtw#Accessory#Open
+Machine Chest Fly#12-15#1-1:30#https://www.youtube.com/watch?v=u56jywgbvE4#Accessory#Open

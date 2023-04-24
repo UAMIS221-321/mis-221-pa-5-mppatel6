@@ -14,10 +14,15 @@ namespace mis_221_pa_5_mppatel6
         }
 
         public void PrintAllBookings(){
+            int count = 0;
             for(int i = 0; i < Booking.GetCount(); i++){
                 if(bookings[i].GetDeleted() == false){
                     System.Console.WriteLine(bookings[i].ToString());
+                    count++;
                 }
+            }
+            if(count == 0){
+                System.Console.WriteLine("Sorry there are no sessions left to book.");
             }
         }
 
@@ -37,6 +42,10 @@ namespace mis_221_pa_5_mppatel6
         public void MonthlyReport(Listing[] listings){
             ListingUtility utility = new ListingUtility(listings);
             utility.GetAllListingsFromFile();
+
+            BookingUtility bookingUtility = new BookingUtility(bookings);
+            bookingUtility.GetAllTransactionsFromFile();
+            bookingUtility.SortDate();
 
 
             System.Console.WriteLine("What month's revenue would you like to see (Please enter month #):");
@@ -62,6 +71,10 @@ namespace mis_221_pa_5_mppatel6
         public void YearlyReport(Listing[] listings){
             ListingUtility utility = new ListingUtility(listings);
             utility.GetAllListingsFromFile();
+            
+            BookingUtility bookingUtility = new BookingUtility(bookings);
+            bookingUtility.GetAllTransactionsFromFile();
+            bookingUtility.SortDate();
 
             System.Console.WriteLine("What year's revenue would you like to see:");
             int year = int.Parse(Console.ReadLine());

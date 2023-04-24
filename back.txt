@@ -1,15 +1,12 @@
-Pull-Up#https://www.youtube.com/watch?v=eGo4IYlbE5g#Compound
-Deadlift#https://www.youtube.com/watch?v=XxWcirHIwVo#Compound
-Bent-Over Row#https://www.youtube.com/watch?v=kBWAon7ItDw#Compound
-Single-Arm Row#https://www.youtube.com/watch?v=dFzUjzfih7k#Compound
-LAT Pulldown#https://www.youtube.com/watch?v=43hWj8mfYGY#Compound
-Reverse Grip Lat Pulldowns#https://www.youtube.com/watch?v=apzFTbsm7HU#Compound
-Neutral Grip Pulldown#https://www.youtube.com/watch?v=kVB6SlEyjQM#Compound
-Landmine Row#https://www.youtube.com/watch?v=9hSQVBHLOX0#Compound
-Cable Rope Pullover#https://www.youtube.com/watch?v=n14syJA6NLg#Accessory
-Cable Bar Pullover#https://www.youtube.com/watch?v=32auHIqgEoM#Accessory
-Back Extensions#https://www.youtube.com/watch?v=ph3pddpKzzw#Accessory
-Chin-Ups#https://www.youtube.com/watch?v=brhRXlOhsAM#Accessory
-Seated Cable Rows#https://www.youtube.com/watch?v=vwHG9Jfu4sw#Accessory
-High Pulls#https://www.youtube.com/watch?v=_5tJG8iNpkA#Accessory
-Farmer's Carry#https://www.youtube.com/watch?v=rt17lmnaLSM#Accessory
+DeadLift#8-10#1-1:30#https://www.youtube.com/watch?v=r4MzxtBKyNE#Compound#Open
+Trap Bar DeadLift#8-10#1-1:30#https://www.youtube.com/watch?v=VNgxEhOoOjo#Compound#Open
+Barbell Bent-Over Row#0#0#https://www.youtube.com/watch?v=FWJR5Ve8bnQ#Compound#Open
+Wide-Grip Row#0#0#https://www.youtube.com/watch?v=e9oe5qbN0jo#Compound#Open
+Rack Pulls#0#0#https://www.youtube.com/watch?v=aAjN8zS7Idg#Compound#Open
+Dumbbell Bent-Over Row#0#0#https://www.youtube.com/watch?v=6TSP1TRMUzs#Compound#Open
+Reverse Dumbbell Flys#0#0#https://www.youtube.com/watch?v=JoCRRZ3zRtI&t=12s#Accessory#Open
+Incline Rows#0#0#https://www.youtube.com/watch?v=BzPuC0X69Kg#Accessory#Open
+Pull-Ups#0#0#https://www.youtube.com/watch?v=3YvfRx31xDE#Accessory#Open
+Chin-Ups#12-15#1-1:30#https://www.youtube.com/watch?v=brhRXlOhsAM&t=17s#Accessory#Open
+Lat Pull-Downs#12-15#1-1:30#https://www.youtube.com/watch?v=43hWj8mfYGY&t=13s#Accessory#Open
+Seated Cable Row#12-15#1-1:30#https://www.youtube.com/watch?v=vwHG9Jfu4sw&t=17s#Accessory#Open

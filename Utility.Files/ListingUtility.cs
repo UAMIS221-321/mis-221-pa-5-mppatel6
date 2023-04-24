@@ -131,7 +131,24 @@ namespace mis_221_pa_5_mppatel6
 
             }
         }
-
+        public void SortDate(){
+            for(int i = 0; i < Booking.GetCount() - 1; i++){
+                int min = i;
+                for(int j = i + 1; j < Booking.GetCount(); j++){
+                    if(listings[min].GetDate().CompareTo(listings[j].GetDate()) > 0 || (listings[j].GetDate() == listings[min].GetDate())){
+                        min = j;
+                    }
+                }
+                if(min != i){
+                    Swap(min, i);
+                }
+            }
+        }
+        private void Swap(int x, int y){
+            Listing temp = listings[x];
+            listings[x] = listings[y];
+            listings[y] = temp;
+        }
         public int BinaryFindMonth(int searchVal){
 
             int min = 0;
@@ -156,7 +173,8 @@ namespace mis_221_pa_5_mppatel6
         public int BinaryFindYear(int searchVal){
 
             int min = 0;
-            int max = Listing.GetCount();
+            int max = Listing.GetCount() - 1;
+            SortDate();
     
             while(min <= max){
                 int middle = (max + min) / 2;
