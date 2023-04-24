@@ -316,7 +316,7 @@ static void BuildWorkout(){
         }
         else if(answer == "2"){
             Console.Clear();
-            System.Console.WriteLine("Which muscle group would you like to hit?\n1:  Chest\n2:  Back\n3:  Legs\n4:  Arms\n5:  Shoulders");
+            System.Console.WriteLine("Which muscle group would you like to hit?\n1:  Chest\n2:  Back\n3:  Legs\n4:  Shoulders\n5:  Arms");
             string userChoice = Console.ReadLine();
             if(userChoice == "1"){
                 print.ChestCompoundBodyBuilding();

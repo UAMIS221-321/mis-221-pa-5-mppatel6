@@ -7,3 +7,4 @@
 7#Jacob Solanto#10th Street#jsolanto@crimson.ua.edu#False
 8#Mattie Bryant#TA Street#mbryant@crimson.ua.edu#False
 9#Alex Collins#6th TA Street#acollins@crimson.ua.edu#False
+10#Matt Gentile#92 2nd Street#mngentile@crimson.ua.edu#False
