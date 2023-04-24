@@ -39,7 +39,7 @@ namespace mis_221_pa_5_mppatel6
             string date = Console.ReadLine();
          
            
-            System.Console.WriteLine("Please enter the time of session (Please enter in military time (+12 if after 12:00)) (HH:MM):");
+            System.Console.WriteLine("Please enter the time of session (Please enter in military time (+12 if after 12:00 PM)) (HH:MM):");
             string time = Console.ReadLine();
             
 

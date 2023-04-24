@@ -311,6 +311,7 @@ static void BuildWorkout(){
                 
                 print.ResetArms();
             }
+            System.Console.WriteLine("Just do 3-4 sets of each workout, depending on how your muscles are feeling\nPress a key to continue");
             Console.ReadKey();
         }
         else if(answer == "2"){
@@ -373,6 +374,7 @@ static void BuildWorkout(){
                 print.ResetArms();
                 
             }
+            System.Console.WriteLine("Just do 3-4 sets of each workout, depending on how your muscles are feeling\nPress a key to continue");
             Console.ReadKey();
         }
         else{
