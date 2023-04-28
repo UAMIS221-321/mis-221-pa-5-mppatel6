@@ -136,7 +136,7 @@ namespace mis_221_pa_5_mppatel6
                 Save();
             }
             else{
-                System.Console.WriteLine("Trainer not found.");
+                System.Console.WriteLine("Session not found.");
                 Console.ReadKey();
             }
         }

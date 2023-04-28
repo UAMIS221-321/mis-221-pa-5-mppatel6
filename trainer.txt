@@ -11,3 +11,7 @@
 11#Ohm Patel#101 Hellen Keller BLVD#opatel6@crimson.ua.edu#False
 12#Wagner Osborn#10th Cookie Street#wosborn@crimson.ua.edu#False
 13#Julio Jones#15th Peach Street#jjones@crimson.ua.edu#False
+14#Sam Morris#12th Country Road#smorris@crimson.ua.edu#False
+15#Ted Mosby#101 HIMYM ST#tmosby@gmail.com#False
+16#Marshall Erikson#102 HIMYM ST #merikson@crimson.ua.edu#False
+17#Barney Stinson#103 HIMYM ST#bstinson@crimson.ua.edu#False
