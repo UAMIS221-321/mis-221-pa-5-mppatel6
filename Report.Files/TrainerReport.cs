@@ -7,7 +7,7 @@ namespace mis_221_pa_5_mppatel6
 {
     public class TrainerReport
     {
-        Trainer[] trainers;
+        private Trainer[] trainers;
 
         public TrainerReport(Trainer[] trainers){
             this.trainers = trainers;

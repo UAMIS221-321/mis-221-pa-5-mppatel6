@@ -8,3 +8,6 @@
 8#Mattie Bryant#TA Street#mbryant@crimson.ua.edu#False
 9#Alex Collins#6th TA Street#acollins@crimson.ua.edu#False
 10#Matt Gentile#92 2nd Street#mngentile@crimson.ua.edu#False
+11#Ohm Patel#101 Hellen Keller BLVD#opatel6@crimson.ua.edu#False
+12#Wagner Osborn#10th Cookie Street#wosborn@crimson.ua.edu#False
+13#Julio Jones#15th Peach Street#jjones@crimson.ua.edu#False

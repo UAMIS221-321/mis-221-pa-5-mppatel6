@@ -35,7 +35,7 @@ namespace mis_221_pa_5_mppatel6
             mylistings.SetTrainerName(Console.ReadLine());
 
     
-            System.Console.WriteLine("Please enter the date of session:");
+            System.Console.WriteLine("Please enter the date of session (MM/DD/YYYY):");
             string date = Console.ReadLine();
          
            
@@ -49,7 +49,7 @@ namespace mis_221_pa_5_mppatel6
             mylistings.SetDate(parsedDate);
             mylistings.SetTime(parsedTime);
 
-            System.Console.WriteLine("Please enter the cost of session:");
+            System.Console.WriteLine("Please enter the cost of session (just number):");
             mylistings.SetCost(int.Parse(Console.ReadLine()));
             System.Console.WriteLine("Is the session open or taken?");
             mylistings.SetTaken(Console.ReadLine());

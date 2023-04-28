@@ -84,7 +84,6 @@ namespace mis_221_pa_5_mppatel6
 
             inFile.Close();
         }
-
         public void ChestCompoundBodyBuilding(){
             GetChest();
             int random = GetOpen(Workout.GetCount(), "Compound");
@@ -146,7 +145,7 @@ namespace mis_221_pa_5_mppatel6
             GetArms();
             int random = GetOpen(Workout.GetCount(), "Bicep");
             int found = FindWorkout(availableWorkout[random].GetWorkout());
-            workouts[found].SetRepRange("6-8");
+            workouts[found].SetRepRange("6-10");
             workouts[found].SetRestTime("1-1:30");
             workouts[found].SetStatus("Used");
             SaveArms();
@@ -157,7 +156,7 @@ namespace mis_221_pa_5_mppatel6
             GetArms();
             int random = GetOpen(Workout.GetCount(), "Tricep");
             int found = FindWorkout(availableWorkout[random].GetWorkout());
-            workouts[found].SetRepRange("6-8");
+            workouts[found].SetRepRange("6-10");
             workouts[found].SetRestTime("1-1:30");
             workouts[found].SetStatus("Used");
             SaveArms();
@@ -169,7 +168,7 @@ namespace mis_221_pa_5_mppatel6
             int random = GetOpen(Workout.GetCount(), "Accessory");
             int found = FindWorkout(availableWorkout[random].GetWorkout());
             workouts[found].SetRepRange("8-12");
-            workouts[found].SetRestTime("1-1:30");
+            workouts[found].SetRestTime("1 minute");
             workouts[found].SetStatus("Used");
             SaveChest();
 
@@ -180,7 +179,7 @@ namespace mis_221_pa_5_mppatel6
             int random = GetOpen(Workout.GetCount(), "Accessory");
             int found = FindWorkout(availableWorkout[random].GetWorkout());
             workouts[found].SetRepRange("8-12");
-            workouts[found].SetRestTime("1-1:30");
+            workouts[found].SetRestTime("1 minute");
             workouts[found].SetStatus("Used");
             SaveBack();
 
@@ -191,7 +190,7 @@ namespace mis_221_pa_5_mppatel6
             int random = GetOpen(Workout.GetCount(), "QuadAccessory");
             int found = FindWorkout(availableWorkout[random].GetWorkout());
             workouts[found].SetRepRange("8-12");
-            workouts[found].SetRestTime("1-1:30");
+            workouts[found].SetRestTime("1 minute");
             workouts[found].SetStatus("Used");
             SaveLegs();
 
@@ -202,7 +201,7 @@ namespace mis_221_pa_5_mppatel6
             int random = GetOpen(Workout.GetCount(), "HamstringAccessory");
             int found = FindWorkout(availableWorkout[random].GetWorkout());
             workouts[found].SetRepRange("8-12");
-            workouts[found].SetRestTime("1-1:30");
+            workouts[found].SetRestTime("1 minute");
             workouts[found].SetStatus("Used");
             SaveLegs();
 
@@ -213,7 +212,7 @@ namespace mis_221_pa_5_mppatel6
             int random = GetOpen(Workout.GetCount(), "Accessory");
             int found = FindWorkout(availableWorkout[random].GetWorkout());
             workouts[found].SetRepRange("8-12");
-            workouts[found].SetRestTime("1-1:30");
+            workouts[found].SetRestTime("1 minute");
             workouts[found].SetStatus("Used");
             SaveShoulders();
 
@@ -301,7 +300,7 @@ namespace mis_221_pa_5_mppatel6
             int random = GetOpen(Workout.GetCount(), "Accessory");
             int found = FindWorkout(availableWorkout[random].GetWorkout());
             workouts[found].SetRepRange("12-15");
-            workouts[found].SetRestTime("1-1:30");
+            workouts[found].SetRestTime("1 minute");
             workouts[found].SetStatus("Used");
             SaveChest();
 
@@ -312,7 +311,7 @@ namespace mis_221_pa_5_mppatel6
             int random = GetOpen(Workout.GetCount(), "Accessory");
             int found = FindWorkout(availableWorkout[random].GetWorkout());
             workouts[found].SetRepRange("12-15");
-            workouts[found].SetRestTime("1-1:30");
+            workouts[found].SetRestTime("1 minute");
             workouts[found].SetStatus("Used");
             SaveBack();
 
@@ -323,7 +322,7 @@ namespace mis_221_pa_5_mppatel6
             int random = GetOpen(Workout.GetCount(), "QuadAccessory");
             int found = FindWorkout(availableWorkout[random].GetWorkout());
             workouts[found].SetRepRange("12-15");
-            workouts[found].SetRestTime("1-1:30");
+            workouts[found].SetRestTime("1 minute");
             workouts[found].SetStatus("Used");
             SaveLegs();
 
@@ -334,7 +333,7 @@ namespace mis_221_pa_5_mppatel6
             int random = GetOpen(Workout.GetCount(), "HamstringAccessory");
             int found = FindWorkout(availableWorkout[random].GetWorkout());
             workouts[found].SetRepRange("12-15");
-            workouts[found].SetRestTime("1-1:30");
+            workouts[found].SetRestTime("1 minute");
             workouts[found].SetStatus("Used");
             SaveLegs();
 
@@ -345,7 +344,7 @@ namespace mis_221_pa_5_mppatel6
             int random = GetOpen(Workout.GetCount(), "Accessory");
             int found = FindWorkout(availableWorkout[random].GetWorkout());
             workouts[found].SetRepRange("12-15");
-            workouts[found].SetRestTime("1-1:30");
+            workouts[found].SetRestTime("1 minute");
             workouts[found].SetStatus("Used");
             SaveShoulders();
 
@@ -416,7 +415,6 @@ namespace mis_221_pa_5_mppatel6
             }
             SaveShoulders();
         }
-
         public int GetOpen(int count, string searchType)
         {
             //Workout[] availableWorkout = new Workout[100];

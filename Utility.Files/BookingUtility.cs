@@ -8,8 +8,6 @@ namespace mis_221_pa_5_mppatel6
     public class BookingUtility
     {
         private Booking[] bookings;
-        Listing[] listings;
-        Trainer[] trainers;
 
         public BookingUtility(Booking[] bookings){
             this.bookings = bookings;
