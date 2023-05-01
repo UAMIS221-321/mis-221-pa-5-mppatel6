@@ -13,7 +13,7 @@ namespace mis_221_pa_5_mppatel6
         public TrainerUtility(Trainer[] trainers){
             this.trainers = trainers;
         }
-        public void GetAllTrainersFromFile(){
+        public void GetAllTrainersFromFile(){ // read trainers in from file
             StreamReader inFile = new StreamReader("trainer.txt");
             
             Trainer.SetCount(0);
@@ -27,7 +27,7 @@ namespace mis_221_pa_5_mppatel6
 
             inFile.Close();
         }
-        public void AddTrainer(){
+        public void AddTrainer(){ // add trainers
             Trainer myTrainer = new Trainer();
             myTrainer.SetID();
             System.Console.WriteLine("Please enter the trainers name:");
@@ -42,7 +42,7 @@ namespace mis_221_pa_5_mppatel6
 
             Save();
         }
-        public int Find(int searchVal){
+        public int Find(int searchVal){ // find the postion that you were looking for
             for(int i = 0; i < Trainer.GetCount(); i++){
                 if(trainers[i].GetID() == searchVal){
                     return i;
@@ -51,7 +51,7 @@ namespace mis_221_pa_5_mppatel6
 
             return -1;
         }
-        public int BinaryFindTrainer(string searchVal){
+        public int BinaryFindTrainer(string searchVal){ // returns the trainers ID
 
             int min = 0;
             int max = Trainer.GetCount();
@@ -69,7 +69,7 @@ namespace mis_221_pa_5_mppatel6
             }
             return -1;
         }
-        public void Sort(){
+        public void Sort(){ // sorts by trainer name
             for(int i = 0; i < Trainer.GetCount() - 1; i++){
                 int min = i;
                 for(int j = i + 1; j < Trainer.GetCount(); j++){
@@ -82,12 +82,12 @@ namespace mis_221_pa_5_mppatel6
                 }
             }
         }
-        private void Swap(int x, int y){
+        private void Swap(int x, int y){ // swaps the trainers in that specific position
             Trainer temp = trainers[x];
             trainers[x] = trainers[y];
             trainers[y] = temp;
         }
-        public void Save(){
+        public void Save(){ // saves the changes to a file
             StreamWriter outFile = new StreamWriter("trainer.txt");
             for(int i = 0; i < Trainer.GetCount(); i++){
                 outFile.WriteLine(trainers[i].ToFile());
@@ -95,7 +95,7 @@ namespace mis_221_pa_5_mppatel6
             outFile.Close();
         }
 
-        public void UpdateTrainer(){
+        public void UpdateTrainer(){ // update the trainers specific area that you choose
             System.Console.WriteLine("What's the ID of the trainer you would like to update");
             int searchVal = int.Parse(Console.ReadLine());
             int foundIndex = Find(searchVal);
@@ -124,7 +124,7 @@ namespace mis_221_pa_5_mppatel6
             }
         }
 
-        public void DeleteTrainer(){
+        public void DeleteTrainer(){ // deletes a trainer
             System.Console.WriteLine("What is the ID of the trainer you would like to delete");
             int searchVal = int.Parse(Console.ReadLine());
             int foundIndex = Find(searchVal);

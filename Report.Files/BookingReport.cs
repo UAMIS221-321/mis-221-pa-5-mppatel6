@@ -13,7 +13,7 @@ namespace mis_221_pa_5_mppatel6
             this.bookings = bookings;
         }
 
-        public void PrintAllBookings(){
+        public void PrintAllBookings(){ // prints all bookings
             int count = 0;
             for(int i = 0; i < Booking.GetCount(); i++){
                 if(bookings[i].GetDeleted() == false){
@@ -26,7 +26,7 @@ namespace mis_221_pa_5_mppatel6
             }
         }
 
-        public void IndividualReport(){
+        public void IndividualReport(){ // prints the email you are searching for and all of their sessions
             System.Console.WriteLine("What is the email you are searching for?");
             string email = Console.ReadLine();
 
@@ -39,7 +39,7 @@ namespace mis_221_pa_5_mppatel6
             System.Console.WriteLine("Those are all the sessions for the specific email.");
             Console.ReadLine();
         }
-        public void MonthlyReport(Listing[] listings){
+        public void MonthlyReport(Listing[] listings){ // reports a months revenue that you are searching for
             ListingUtility utility = new ListingUtility(listings);
             utility.GetAllListingsFromFile();
 
@@ -68,7 +68,7 @@ namespace mis_221_pa_5_mppatel6
             Console.ReadKey();
         }
 
-        public void YearlyReport(Listing[] listings){
+        public void YearlyReport(Listing[] listings){ // reports a years revenue that you are searching for
             ListingUtility utility = new ListingUtility(listings);
             utility.GetAllListingsFromFile();
             
@@ -93,7 +93,7 @@ namespace mis_221_pa_5_mppatel6
             Console.ReadKey();
         }
 
-        public void CombinedReport(Listing[] listings){
+        public void CombinedReport(Listing[] listings){ // reports month revenue and then total year revenue
             ListingUtility utility = new ListingUtility(listings);
             utility.GetAllListingsFromFile();
 
@@ -103,6 +103,7 @@ namespace mis_221_pa_5_mppatel6
             DateOnly month = bookings[0].GetTrainingDate();
             int currMonth = month.Month;
             int currYear = month.Year;
+            
             double sum = utility.BinaryFindMonth(month.Month);
             double yearSum = utility.BinaryFindMonth(month.Month);
             
@@ -149,7 +150,7 @@ namespace mis_221_pa_5_mppatel6
             System.Console.WriteLine("Press a key to continue!");
             Console.ReadKey();
         }
-        public void ProcessBreak(ref int currMonth, ref double sum, int i, Listing[] listings){
+        public void ProcessBreak(ref int currMonth, ref double sum, int i, Listing[] listings){ // changes the month to the next month
             string month = "";
             if(currMonth == 1){
                 month = "Janurary";
@@ -195,7 +196,7 @@ namespace mis_221_pa_5_mppatel6
             currMonth = newMonth.Month;
             sum = utility.BinaryFindMonth(newMonth.Month);
         }
-        public void PrintCustomerSessions(){
+        public void PrintCustomerSessions(){ //prints total number of customers session
             BookingUtility utility = new BookingUtility(bookings);
             utility.GetAllTransactionsFromFile();
             utility.Sort();

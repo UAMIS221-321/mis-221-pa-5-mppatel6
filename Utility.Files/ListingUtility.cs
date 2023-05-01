@@ -13,7 +13,7 @@ namespace mis_221_pa_5_mppatel6
             this.listings = listings;
         }
 
-        public void GetAllListingsFromFile(){
+        public void GetAllListingsFromFile(){ // gets all the listing from the file
             StreamReader inFile = new StreamReader("listings.txt");
             
             Listing.SetCount(0);
@@ -27,7 +27,7 @@ namespace mis_221_pa_5_mppatel6
 
             inFile.Close();
         }
-        public void AddListing(){
+        public void AddListing(){ // adds a listing using the trainers information that they are inputing
             Listing mylistings = new Listing();
             
             mylistings.SetListingID();
@@ -59,7 +59,7 @@ namespace mis_221_pa_5_mppatel6
 
             Save();
         }
-        public int Find(int searchVal){
+        public int Find(int searchVal){ // finds the i value where your search value is found
             for(int i = 0; i < Listing.GetCount(); i++){
                 if(listings[i].GetListingID() == searchVal){
                     return i;
@@ -68,14 +68,14 @@ namespace mis_221_pa_5_mppatel6
             return -1;
         }
     
-        public void Save(){
+        public void Save(){ // saves changes to file
             StreamWriter outFile = new StreamWriter("listings.txt");
             for(int i = 0; i < Listing.GetCount(); i++){
                 outFile.WriteLine(listings[i].ToFile());
             }
             outFile.Close();
         }
-        public void UpdateListing(){
+        public void UpdateListing(){ // updates the specific part of the listing you choose
             System.Console.WriteLine("What's the ID of the listing you would like to update");
             int searchVal = int.Parse(Console.ReadLine());
             int foundIndex = Find(searchVal);
@@ -115,7 +115,7 @@ namespace mis_221_pa_5_mppatel6
 
             }
         }
-        public void DeleteListing(){
+        public void DeleteListing(){ // deletes listing
             System.Console.WriteLine("What is the ID of the listing you would like to delete");
             int searchVal = int.Parse(Console.ReadLine());
             int foundIndex = Find(searchVal);
@@ -131,10 +131,10 @@ namespace mis_221_pa_5_mppatel6
 
             }
         }
-        public void SortDate(){
-            for(int i = 0; i < Booking.GetCount() - 1; i++){
+        public void SortDate(){ // sorts the listings by date
+            for(int i = 0; i < Listing.GetCount() - 1; i++){
                 int min = i;
-                for(int j = i + 1; j < Booking.GetCount(); j++){
+                for(int j = i + 1; j < Listing.GetCount(); j++){
                     if(listings[min].GetDate().CompareTo(listings[j].GetDate()) > 0 || (listings[j].GetDate() == listings[min].GetDate())){
                         min = j;
                     }
@@ -144,15 +144,16 @@ namespace mis_221_pa_5_mppatel6
                 }
             }
         }
-        private void Swap(int x, int y){
+        private void Swap(int x, int y){ // swaps the listings position
             Listing temp = listings[x];
             listings[x] = listings[y];
             listings[y] = temp;
         }
-        public int BinaryFindMonth(int searchVal){
+        public int BinaryFindMonth(int searchVal){ // binary search to return a given months total revenue
 
             int min = 0;
             int max = Listing.GetCount();
+            SortDate();
     
             while(min <= max){
                 int middle = (max + min) / 2;
@@ -170,10 +171,10 @@ namespace mis_221_pa_5_mppatel6
             }
             return -1;
         }
-        public int BinaryFindYear(int searchVal){
+        public int BinaryFindYear(int searchVal){ // binary search to return a given months total revenue
 
             int min = 0;
-            int max = Listing.GetCount() - 1;
+            int max = Listing.GetCount();
             SortDate();
     
             while(min <= max){

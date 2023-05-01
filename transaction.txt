@@ -18,3 +18,5 @@
 18#Lebron James#king@akron.com#7/29/2023#14#Sam Morris#Booked#False
 19#Steph Curry#scurry@warriors.com#6/23/2023#11#Ohm Patel#Booked#False
 20#Tyler Le#tle@crimson.ua.edu#5/30/2023#5#Ellie Dockery#Booked#False
+21#Nick C#nick@gmail.com#5/12/2023#6#Jeff Lucas#Booked#False
+22#Steph Curry#scurry@gmail.com#9/12/2023#16#Marshall Erikson#Booked#False

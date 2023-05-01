@@ -81,7 +81,7 @@ static void PauseAction()
     Console.ReadKey();
 }
 
-static void ManageTrainer(Trainer[] trainers)
+static void ManageTrainer(Trainer[] trainers) // you can add trainers and manage and edit all the trainers from here
 {
     Console.Clear();
 
@@ -99,15 +99,15 @@ static void ManageTrainer(Trainer[] trainers)
 
         if (userInput == "1")
         {
-            utility.AddTrainer();
+            utility.AddTrainer(); // add trainers
         }
         else if (userInput == "2")
         {
-            utility.UpdateTrainer();
+            utility.UpdateTrainer(); // update trainers
         }
         else if (userInput == "3")
         {
-            utility.DeleteTrainer();
+            utility.DeleteTrainer(); // delete trainers
         }
         else if (userInput != "4")
         {
@@ -122,7 +122,7 @@ static void ManageTrainer(Trainer[] trainers)
     }
 }
 
-static void ManageListing(Listing[] listings)
+static void ManageListing(Listing[] listings) // This allows you to manage all the listing the trainers make
 {
     Console.Clear();
 
@@ -141,15 +141,15 @@ static void ManageListing(Listing[] listings)
 
         if (userInput == "1")
         {
-            utility.AddListing();
+            utility.AddListing(); // adds listing
         }
         else if (userInput == "2")
         {
-            utility.UpdateListing();
+            utility.UpdateListing(); // update listing
         }
         else if (userInput == "3")
         {
-            utility.DeleteListing();
+            utility.DeleteListing(); // delete listing
         }
         else if (userInput != "4")
         {
@@ -165,7 +165,7 @@ static void ManageListing(Listing[] listings)
 
 }
 
-static void ManageCustomer(Trainer[] trainers, Listing[] listings, Booking[] bookings)
+static void ManageCustomer(Trainer[] trainers, Listing[] listings, Booking[] bookings) // you can manage all the bookings and book an open session 
 {
     Console.Clear();
 
@@ -190,11 +190,11 @@ static void ManageCustomer(Trainer[] trainers, Listing[] listings, Booking[] boo
             {
                 if (answer == "1")
                 {
-                    utility.UpdateTransaction();
+                    utility.UpdateTransaction(); // update bookings
                 }
                 else if (answer == "2")
                 {
-                    utility.DeleteTransaction();
+                    utility.DeleteTransaction(); // delete bookings
                 }
                 else if (answer != "3")
                 {
@@ -209,7 +209,7 @@ static void ManageCustomer(Trainer[] trainers, Listing[] listings, Booking[] boo
         }
         else if (userInput == "2")
         {
-            utility.Book(listings, trainers, bookings);
+            utility.Book(listings, trainers, bookings); // book listing
         }
         else if (userInput != "3")
         {
@@ -222,7 +222,7 @@ static void ManageCustomer(Trainer[] trainers, Listing[] listings, Booking[] boo
     }
 }
 
-static void RunReports(Trainer[] trainers, Listing[] listings, Booking[] bookings)
+static void RunReports(Trainer[] trainers, Listing[] listings, Booking[] bookings) // from here you can run all your reports
 {
     Console.Clear();
     System.Console.WriteLine("What kind of record would you like to see?\n1:  Individual Customer Sessions\n2:  Historical Customer Sessions\n3:  Historical Revenue Report\n4:  Exit");
@@ -238,13 +238,13 @@ static void RunReports(Trainer[] trainers, Listing[] listings, Booking[] booking
         if (answer == "1")
         {
             Console.Clear();
-            report.IndividualReport();
+            report.IndividualReport(); // Search for email and reports all their sessions
 
         }
         else if (answer == "2")
         {
             Console.Clear();
-            report.PrintCustomerSessions();
+            report.PrintCustomerSessions(); // reports all the individuals sessions sorted by customer name then by date
             System.Console.WriteLine("");
             System.Console.WriteLine("Here is the report for all the customers sorted by name and then date.\nPlease press a key to continue.");
             Console.ReadKey();
@@ -259,15 +259,15 @@ static void RunReports(Trainer[] trainers, Listing[] listings, Booking[] booking
             {
                 if (annual == "1")
                 {
-                    report.CombinedReport(listings);
+                    report.CombinedReport(listings); // monthly and yearly report
                 }
                 else if (annual == "2")
                 {
-                    report.MonthlyReport(listings);
+                    report.MonthlyReport(listings); // search for month to report the total months revenue
                 }
                 else if (annual == "3")
                 {
-                    report.YearlyReport(listings);
+                    report.YearlyReport(listings); // search for year to report the total years revenue
                 }
                 else if (annual != "4")
                 {
@@ -289,7 +289,7 @@ static void RunReports(Trainer[] trainers, Listing[] listings, Booking[] booking
     }
 }
 
-static void BuildWorkout()
+static void BuildWorkout() // builds workouts depending on your answer choices and muscle group you want to work out
 {
     Workout[] workouts = new Workout[1000];
     Console.Clear();
@@ -454,7 +454,7 @@ static void BuildWorkout()
     }
 
 }
-    static void WelcomeDisp()
+    static void WelcomeDisp() // opening display
     {
         Console.Clear();
         bool show = true;

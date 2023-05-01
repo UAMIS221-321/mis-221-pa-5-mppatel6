@@ -14,7 +14,7 @@ namespace mis_221_pa_5_mppatel6
 
         }
 
-        public void PrintAllListings(){
+        public void PrintAllListings(){ // prints all listings
             for(int i = 0; i < Listing.GetCount(); i++){
                 if(listings[i].GetDeleted() == false){
                     System.Console.WriteLine(listings[i].ToString());
@@ -22,7 +22,7 @@ namespace mis_221_pa_5_mppatel6
             }
         }
 
-        public void PrintOpenListing(){
+        public void PrintOpenListing(){ // prints open listings
             for(int i = 0; i < Listing.GetCount(); i++){
                 if(listings[i].GetDeleted() == false){
                     if(listings[i].GetTaken() == "Open"){
@@ -31,8 +31,8 @@ namespace mis_221_pa_5_mppatel6
                 }
             }
         }
-        public int CountOpenListings(){
-            int count = 0;
+        public int CountOpenListings(){ // count's all the open listings
+            int count = 0; 
             for(int i = 0; i < Listing.GetCount(); i++){
                 if(listings[i].GetDeleted() == false){
                     if(listings[i].GetTaken() == "Open"){

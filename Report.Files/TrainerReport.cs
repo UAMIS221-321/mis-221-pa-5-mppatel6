@@ -14,7 +14,7 @@ namespace mis_221_pa_5_mppatel6
 
         }
 
-        public void PrintAllTrainers(){
+        public void PrintAllTrainers(){ // reports all the trainers
             for(int i = 0; i < Trainer.GetCount(); i++){
                 if(trainers[i].GetDeleted() == false){
                     System.Console.WriteLine(trainers[i].ToString());

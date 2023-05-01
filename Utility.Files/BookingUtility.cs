@@ -13,7 +13,7 @@ namespace mis_221_pa_5_mppatel6
             this.bookings = bookings;
         }
 
-        public void GetAllTransactionsFromFile(){
+        public void GetAllTransactionsFromFile(){ // gets all the bookings from file
             StreamReader inFile = new StreamReader("transaction.txt");
             
             Booking.SetCount(0);
@@ -28,7 +28,7 @@ namespace mis_221_pa_5_mppatel6
             inFile.Close();
         }
 
-        public void Book(Listing[] listings, Trainer[] trainers, Booking[] bookings){
+        public void Book(Listing[] listings, Trainer[] trainers, Booking[] bookings){ // book an open session
             Console.Clear();
             Booking mybookings = new Booking();
             ListingUtility utilityListing = new ListingUtility(listings);
@@ -84,7 +84,7 @@ namespace mis_221_pa_5_mppatel6
             
         }
 
-        public int Find(int searchVal){
+        public int Find(int searchVal){ // find the value of i where what you are searching for is found
             for(int i = 0; i < Booking.GetCount(); i++){
                 if(bookings[i].GetSessionID() == searchVal){
                     return i;
@@ -92,14 +92,14 @@ namespace mis_221_pa_5_mppatel6
             }
             return -1;
         }
-        public void Save(){
+        public void Save(){ // saves the changes to the file
             StreamWriter outFile = new StreamWriter("transaction.txt");
             for(int i = 0; i < Booking.GetCount(); i++){
                 outFile.WriteLine(bookings[i].ToFile());
             }
             outFile.Close();
         }
-        public void UpdateTransaction(){
+        public void UpdateTransaction(){ // update a specific part of the booking
             System.Console.WriteLine("What's the ID of the session you would like to update");
             int searchVal = int.Parse(Console.ReadLine());
             int foundIndex = Find(searchVal);
@@ -140,7 +140,7 @@ namespace mis_221_pa_5_mppatel6
                 Console.ReadKey();
             }
         }
-        public void DeleteTransaction(){
+        public void DeleteTransaction(){ // delete booking
             System.Console.WriteLine("What is the ID of the booking you would like to delete");
             int searchVal = int.Parse(Console.ReadLine());
             int foundIndex = Find(searchVal);
@@ -156,7 +156,7 @@ namespace mis_221_pa_5_mppatel6
 
             }
         }
-        public void Sort(){
+        public void Sort(){ // sort bookings by name and then by date 
             for(int i = 0; i < Booking.GetCount() - 1; i++){
                 int min = i;
                 for(int j = i + 1; j < Booking.GetCount(); j++){
@@ -169,7 +169,7 @@ namespace mis_221_pa_5_mppatel6
                 }
             }
         }
-        public void SortDate(){
+        public void SortDate(){ // sorts the bookings by date
             for(int i = 0; i < Booking.GetCount() - 1; i++){
                 int min = i;
                 for(int j = i + 1; j < Booking.GetCount(); j++){
@@ -182,7 +182,7 @@ namespace mis_221_pa_5_mppatel6
                 }
             }
         }
-        private void Swap(int x, int y){
+        private void Swap(int x, int y){ // changes the bookings postions in the array
             Booking temp = bookings[x];
             bookings[x] = bookings[y];
             bookings[y] = temp;

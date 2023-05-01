@@ -14,7 +14,7 @@
 14#Matt Gentile#5/24/2023#4:00 PM#50#Booked#False
 15#Wagner Osborn#6/10/2024#3:00 PM#50#Booked#False
 16#Manav Patel#5/25/2023#2:00 PM#50#Open#False
-17#Jeff Lucas#5/12/2023#3:00 PM#50#Open#False
+17#Jeff Lucas#5/12/2023#3:00 PM#50#Booked#False
 18#Carson Miller#5/21/2023#4:00 PM#50#Open#False
 19#Ellie Dockery#5/30/2023#1:00 PM#50#Booked#False
 20#Alex Collins#6/14/2023#5:00 PM#50#Open#False
@@ -24,5 +24,5 @@
 24#Wagner Osborn#12/23/2023#1:00 PM#50#Open#False
 25#Ted Mosby#10/21/2023#2:00 PM#50#Open#False
 26#Barney Stinson#11/12/2023#2:00 PM#50#Booked#False
-27#Marshall Erikson#9/12/2023#4:00 PM#50#Open#False
+27#Marshall Erikson#9/12/2023#4:00 PM#50#Booked#False
 28#Sam Morris#7/29/2023#1:00 PM#50#Booked#False
